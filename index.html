@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#dff3ff">
+  <title>PetCare — Your Pet's Happy Place</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="dashboard"><span class="brand-mark">🐾</span><span>Pet<span class="brand-blue">Care</span><small>little paws, big love</small></span></a>
+      <div class="side-label">MENU</div>
+      <nav class="nav">
+        <button class="nav-link active" data-page="dashboard"><span>⌂</span> Dashboard</button>
+        <button class="nav-link" data-page="pets"><span>🐶</span> My Pets</button>
+        <button class="nav-link" data-page="health"><span>♡</span> Health tracker</button>
+        <button class="nav-link" data-page="feeding"><span>🍽</span> Feeding schedule</button>
+        <button class="nav-link" data-page="appointments"><span>🗓</span> Appointments</button>
+        <button class="nav-link" data-page="tips"><span>✦</span> Pet care tips</button>
+      </nav>
+      <div class="sidebar-note"><div class="note-icon">💙</div><b>Every paw deserves love!</b><p>Small steps make happy, healthy pets.</p></div>
+      <div class="sidebar-bottom">Made with <span>♥</span> for pet lovers</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">PetCare <span>/</span> <b id="crumb">Dashboard</b></div>
+        <div class="top-actions"><div class="today" id="today"></div><div class="avatar">🐾</div></div>
+      </header>
+      <div class="content" id="content"></div>
+      <footer>PetCare <span>•</span> Your pet's happy place <span>💙</span></footer>
+    </main>
+  </div>
+
+  <dialog id="petDialog" class="modal">
+    <form id="petForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">NEW BEST FRIEND</span><h2>Add a pet 🐾</h2></div><button type="button" class="close-btn" data-close>×</button></div>
+      <label>Pet's name<input name="name" required placeholder="e.g. Toffee"></label>
+      <div class="form-row"><label>Animal<select name="type"><option>Dog</option><option>Cat</option><option>Bird</option><option>Rabbit</option><option>Other</option></select></label><label>Breed<input name="breed" placeholder="e.g. Shih Tzu"></label></div>
+      <div class="form-row"><label>Age<input name="age" placeholder="e.g. 4 months"></label><label>Weight<input name="weight" placeholder="e.g. 3.2 kg"></label></div>
+      <label>Photo emoji<select name="emoji"><option>🐶</option><option>🐱</option><option>🐰</option><option>🐦</option><option>🐹</option><option>🐾</option></select></label>
+      <button class="primary-btn full" type="submit">Add to my pets ✨</button>
+    </form>
+  </dialog>
+
+  <dialog id="recordDialog" class="modal">
+    <form id="recordForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow" id="recordEyebrow">KEEP THINGS ON TRACK</span><h2 id="recordTitle">Add a record</h2></div><button type="button" class="close-btn" data-close>×</button></div>
+      <label id="recordNameLabel">Title<input name="title" required placeholder="Enter a title"></label>
+      <div class="form-row"><label>Date<input name="date" type="date" required></label><label id="extraLabel">Details<input name="extra" placeholder="Optional details"></label></div>
+      <button class="primary-btn full" type="submit">Save record ✨</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
